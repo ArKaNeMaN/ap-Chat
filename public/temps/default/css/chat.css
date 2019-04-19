@@ -1,0 +1,73 @@
+.chatFooter{
+	potision: absolute;
+	width: 100%;
+	bottom: 0;
+	display: -webkit-flex;
+	display: flex;
+}
+.chatSendBtn{
+	-webkit-flex-grow: 1;
+	flex-grow: 1;
+	border-radius: 0!important;
+}
+.chatInput{
+	-webkit-flex-grow: 15;
+	flex-grow: 15;
+	border-radius: 0!important;
+	resize: none;
+	height: 35px;
+}
+.chatEmojiPicker{
+	-webkit-flex-grow: 1;
+	flex-grow: 1;
+	border-radius: 0!important;
+}
+.chatList{
+	margin: 0;
+}
+.chatBlockBody{
+	height: 400px;
+	overflow-y: auto;
+	overflow-x: hidden;
+	padding-top: 0!important;
+	padding-bottom: 0!important;
+	border-radius: 0!important;
+}
+.chatList li{
+	display: -webkit-flex;
+	display: flex;
+	padding: 8px!important;
+}
+.chatAvatar{
+	-webkit-flex-grow: 0;
+	flex-grow: 0;
+	border-radius: 100px;
+	width: 60px;
+	height: 60px;
+	object-fit: cover;
+	cursor: pointer;
+}
+.chatMsgCont{
+	-webkit-flex-grow: 5;
+	flex-grow: 5;
+	margin-left: 8px;
+}
+.chatSendTime{
+	float: right;
+	font-size: 90%;
+	opacity: .8;
+	
+}
+.chatNick{
+	display: block;
+}
+.chatMsg{
+	user-select: auto;
+	display: block;
+	margin-top: 5px;
+}
+.chatUserId{
+	margin-left: 3px;
+	opacity: .5;
+	font-weight: normal;
+}

@@ -1,0 +1,35 @@
+<?php if($this->isModuleActive('chat')):?>
+	
+	<link href="<?php echo PANEL_HOME.$this->getTplThemePath('public/temps', '/css/chat.css');?>" rel="stylesheet" />
+	<script src="<?php echo PANEL_HOME;?>public/js/chat.js" async></script>
+	<link href="https://rawgit.com/ellekasai/twemoji-awesome/gh-pages/twemoji-awesome.css" rel="stylesheet" />
+	<script src="//twemoji.maxcdn.com/twemoji.min.js"></script>
+	
+	<div class="blockCont">
+		<div class="blockHead">Чат</div>
+		<div class="blockBody blockScroll chatBlockBody" style="overflow-y:auto;overflow-x:hidden;">
+			<ul class="chatList hover">
+				<?php if($chatMsgs = $this->modules['chat']->getMsgs()):?>
+					<?php for($i = 0; $i < count($chatMsgs); $i++):?>
+						<li id="chatMsg-<?php echo $chatMsgs[$i]['id'];?>">
+							<img onclick="location.href = 'profile?id=<?php echo $chatMsgs[$i]['userInfo']['id'];?>';" class="chatAvatar" src="<?php echo PANEL_HOME.$chatMsgs[$i]['userInfo']['avatar'];?>" />
+							<div class="chatMsgCont">
+								<span class="chatSendTime"><?php echo $chatMsgs[$i]['sendTimeF'];?></span>
+								<b class="chatNick"><?php echo $chatMsgs[$i]['userInfo']['name'];?><sup class="chatUserId"><?php echo $chatMsgs[$i]['userInfo']['id'];?></sup></b>
+								<span class="chatMsg"><?php echo $chatMsgs[$i]['msg'];?></span>
+							</div>
+						</li>
+					<?php endfor;?>
+					<script>window.chatNumMsgs = <?php echo $i;?>; window.chatLastMsgId = <?php echo array_pop($chatMsgs)['id'];?>;</script>
+				<?php else:?>
+					<li><div align=center>Пусто</div></li>
+				<?php endif;?>
+			</ul>
+		</div>
+		<div class="chatFooter">
+			<input class="styler chatInput" type="text" placeholder="Введите сообщение" rows="1"/>
+			<button class="styler chatEmojiPicker"><i class="fa fa-smile"></i></button>
+			<button class="styler chatSendBtn"><i class="fab fa-telegram-plane"></i></button>
+		</div>
+	</div>
+<?php endif;?>

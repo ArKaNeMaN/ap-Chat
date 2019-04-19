@@ -1,0 +1,14 @@
+{
+	"name": "Чат",
+	"version": "1.0",
+	"author": "ArKaNeMaN",
+	"needInstall": true,
+	"files": [
+		"lib/modules/chat/info.json",
+		"lib/modules/chat/class.php",
+		"public/js/chat.js",
+		"request/chat.php",
+		"temps/default/blocks/chat/info.json",
+		"temps/default/blocks/chat/block.aptpl"
+	]
+}
